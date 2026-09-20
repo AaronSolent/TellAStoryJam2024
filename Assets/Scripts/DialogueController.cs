@@ -57,13 +57,13 @@ public class DialogueController : MonoBehaviour
 				if(letter == '>') skip = false;
 				
 				dialogueText.text += letter;
-				if(!skip) yield return new WaitForSeconds(0.05f);
+				if(!skip) yield return new WaitForSeconds(0.03f);
 				if(skipFlag) skip = true;
 			}
 			skipFlag = false;
 			dialogueText.text = line;
 			float timeWaited = 0f;
-			while(timeWaited < (1.5f + line.Length*0.05f) && !skipFlag)
+			while(timeWaited < (0.5f + line.Length*0.04f) && !skipFlag)
 			{
 				yield return new WaitForSeconds(0.05f);
 				timeWaited += 0.05f;
